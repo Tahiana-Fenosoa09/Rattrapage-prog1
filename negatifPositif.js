@@ -1,27 +1,18 @@
 // exo 1
 
+import { echanger } from "./echanger";
+
 function negatifPositif(arr){
-    const negatif = [];
-    const positif = [];
-    const finalArray = [];
+    const arraySize = arr.lenght - 1;
 
 
-    for(let i = 0 ; i <= arr.lenght - 1 ; i++){
-        if(arr[i] <= 0){
-            negatif.push(arr[i]);
-        }else{
-            positif.push(arr[i]);
+    for(let i = 0 ; i <= arraySize ; i++){
+        if(!(arr[i+1] > arraySize)){
+            if(arr[i] >= 0 && arr[i+1] < 0){
+                echanger(arr,arr[i],arr[i+1]);
+            }
         }
     }
-
-    for(let i = 0 ; i <= negatif.lenght - 1 ; i++){
-        finalArray.push(arr[i]);
-    }
-
-    for(let i = 0 ; i <= positif.lenght - 1 ; i++){
-        finalArray.push(arr[i]);
-    }
-
     return finalArray;
 }
 
